@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Manushri Thangapandi — Business Analyst &amp; PMO Specialist</title>
+<meta name="description" content="Manushri Thangapandi — Business Analyst, PMO Specialist and Project Coordinator specializing in Guidewire InsuranceSuite, Agile delivery, and stakeholder governance.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#132339;
+    --ink-soft:#2b3f57;
+    --paper:#EEF0E9;
+    --paper-2:#E4E7DD;
+    --card:#FBFAF6;
+    --steel:#3E6C9A;
+    --amber:#C6863D;
+    --teal:#2F7D6B;
+    --rule: rgba(19,35,57,0.14);
+    --rule-light: rgba(255,255,255,0.16);
+    --serif: 'Fraunces', Georgia, serif;
+    --sans: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', 'SFMono-Regular', monospace;
+    --maxw: 1120px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0; background:var(--paper); color:var(--ink);
+    font-family:var(--sans); line-height:1.6; font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  .wrap{max-width:var(--maxw); margin:0 auto; padding:0 28px;}
+  h1,h2,h3{font-family:var(--serif); font-weight:600; line-height:1.08; margin:0;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12.5px; letter-spacing:.14em; text-transform:uppercase;
+    color:var(--steel); display:flex; align-items:center; gap:10px; margin-bottom:14px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--steel);display:inline-block;}
+  section{padding:88px 0;}
+  @media(max-width:720px){section{padding:56px 0;}}
+
+  /* ---------- NAV ---------- */
+  #nav{
+    position:sticky; top:0; z-index:50; background:rgba(238,240,233,0.92);
+    backdrop-filter:blur(6px); border-bottom:1px solid var(--rule);
+  }
+  #nav .wrap{display:flex; align-items:center; justify-content:space-between; padding-top:16px; padding-bottom:16px;}
+  .brand{font-family:var(--serif); font-weight:600; font-size:19px; letter-spacing:.01em;}
+  .brand span{color:var(--steel);}
+  #navlinks{display:flex; gap:26px; list-style:none; margin:0; padding:0; font-size:13.5px;}
+  #navlinks a{text-decoration:none; color:var(--ink-soft); font-weight:500; letter-spacing:.01em;}
+  #navlinks a:hover{color:var(--steel);}
+  #navToggle{display:none; background:none; border:1px solid var(--rule); border-radius:6px; padding:7px 10px; font-family:var(--mono); font-size:12px; cursor:pointer;}
+  @media(max-width:860px){
+    #navlinks{position:absolute; top:100%; left:0; right:0; background:var(--paper); flex-direction:column; padding:14px 28px 22px; border-bottom:1px solid var(--rule); display:none;}
+    #navlinks.open{display:flex;}
+    #navToggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  #home{padding-top:76px; padding-bottom:70px;}
+  .hero-grid{display:grid; grid-template-columns:1.25fr .95fr; gap:56px; align-items:start;}
+  @media(max-width:860px){.hero-grid{grid-template-columns:1fr;}}
+  .hero-title{font-size:clamp(34px,5vw,54px); letter-spacing:-.01em;}
+  .hero-role{font-family:var(--mono); font-size:13.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--steel); margin-top:18px;}
+  .hero-lede{font-size:18px; color:var(--ink-soft); max-width:52ch; margin-top:20px;}
+  .cta-row{display:flex; gap:14px; margin-top:32px; flex-wrap:wrap;}
+  .btn{
+    font-family:var(--sans); font-weight:600; font-size:14px; padding:13px 22px; border-radius:3px;
+    text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1px solid transparent; cursor:pointer;
+  }
+  .btn-primary{background:var(--ink); color:var(--paper);}
+  .btn-primary:hover{background:var(--ink-soft);}
+  .btn-ghost{border-color:var(--ink); color:var(--ink);}
+  .btn-ghost:hover{background:var(--ink); color:var(--paper);}
+
+  /* ledger card stack */
+  .ledger{border:1px solid var(--rule); background:var(--card); border-radius:4px; overflow:hidden;}
+  .ledger-head{font-family:var(--mono); font-size:11.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--ink-soft); padding:12px 18px; border-bottom:1px solid var(--rule); display:flex; justify-content:space-between;}
+  .ledger-row{display:flex; align-items:baseline; justify-content:space-between; padding:16px 18px; border-bottom:1px solid var(--rule); gap:14px;}
+  .ledger-row:last-child{border-bottom:none;}
+  .ledger-num{font-family:var(--serif); font-size:28px; font-weight:600; color:var(--ink);}
+  .ledger-label{font-size:13px; color:var(--ink-soft); text-align:right; max-width:60%;}
+  .tag{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; text-transform:uppercase; padding:3px 8px; border-radius:2px; white-space:nowrap;}
+  .tag-live{background:rgba(47,125,107,.14); color:var(--teal);}
+  .tag-amber{background:rgba(198,134,61,.16); color:#96652b;}
+  .tag-steel{background:rgba(62,108,154,.14); color:var(--steel);}
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sec-head{max-width:62ch; margin-bottom:44px;}
+  .sec-head h2{font-size:clamp(26px,3.4vw,36px);}
+  .sec-sub{color:var(--ink-soft); margin-top:12px; font-size:16px;}
+
+  /* dark band */
+  .band-dark{background:var(--ink); color:var(--paper);}
+  .band-dark .eyebrow{color:#8FB5DB;}
+  .band-dark .eyebrow::before{background:#8FB5DB;}
+  .band-dark .sec-sub{color:#B9C4D2;}
+
+  /* ---------- SUMMARY / ABOUT ---------- */
+  .prose{max-width:74ch; font-size:17px; color:var(--ink-soft);}
+  .prose p + p{margin-top:16px;}
+  .about-grid{display:grid; grid-template-columns:.9fr 1.1fr; gap:56px;}
+  @media(max-width:860px){.about-grid{grid-template-columns:1fr;}}
+  .fact-list{list-style:none; margin:0; padding:0; font-family:var(--mono); font-size:13.5px;}
+  .fact-list li{display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--rule-light);}
+  .band-dark .fact-list li{border-bottom:1px solid var(--rule-light);}
+  :not(.band-dark) .fact-list li{border-bottom:1px solid var(--rule);}
+  .fact-k{color:#8FB5DB;}
+  :not(.band-dark) .fact-k{color:var(--steel);}
+
+  /* ---------- COMPETENCY / SKILL GRIDS ---------- */
+  .grid-3{display:grid; grid-template-columns:repeat(3,1fr); gap:2px; background:var(--rule); border:1px solid var(--rule);}
+  @media(max-width:720px){.grid-3{grid-template-columns:1fr 1fr;}}
+  @media(max-width:480px){.grid-3{grid-template-columns:1fr;}}
+  .chip{background:var(--card); padding:16px 18px; font-size:14.5px; font-weight:500;}
+
+  .skill-cat{margin-bottom:30px;}
+  .skill-cat h3{font-family:var(--mono); font-size:12.5px; letter-spacing:.1em; text-transform:uppercase; color:var(--steel); font-weight:600; margin-bottom:10px;}
+  .skill-tags{display:flex; flex-wrap:wrap; gap:8px;}
+  .skill-tag{border:1px solid var(--rule); padding:7px 12px; border-radius:20px; font-size:13.5px; background:var(--card);}
+
+  /* ---------- DOMAIN ---------- */
+  .domain-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:24px;}
+  @media(max-width:860px){.domain-grid{grid-template-columns:1fr;}}
+  .domain-card{background:var(--card); border:1px solid var(--rule); border-radius:4px; padding:26px; border-top:3px solid var(--steel);}
+  .domain-card:nth-child(2){border-top-color:var(--teal);}
+  .domain-card:nth-child(3){border-top-color:var(--amber);}
+  .domain-card h3{font-size:19px; margin-bottom:10px;}
+  .domain-card p{font-size:14.5px; color:var(--ink-soft); margin:0;}
+
+  /* ---------- EXPERIENCE (LEDGER TIMELINE) ---------- */
+  .exp-item{border-left:2px solid var(--rule); padding-left:28px; position:relative; margin-bottom:50px;}
+  .exp-item::before{content:""; position:absolute; left:-7px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--steel); border:3px solid var(--paper);}
+  .exp-top{display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:10px; margin-bottom:6px;}
+  .exp-role{font-family:var(--serif); font-size:22px; font-weight:600;}
+  .exp-meta{font-size:14.5px; color:var(--ink-soft);}
+  .exp-dates{font-family:var(--mono); font-size:12.5px; color:var(--steel); white-space:nowrap;}
+  .exp-item ul{margin:16px 0 0; padding-left:20px; color:var(--ink-soft); font-size:15px;}
+  .exp-item li{margin-bottom:8px;}
+
+  /* ---------- PROJECT CARDS ---------- */
+  .proj-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  @media(max-width:900px){.proj-grid{grid-template-columns:1fr;}}
+  .proj-card{background:var(--card); border:1px solid var(--rule); border-radius:4px; padding:26px; display:flex; flex-direction:column;}
+  .proj-tag-row{display:flex; gap:8px; margin-bottom:14px; flex-wrap:wrap;}
+  .proj-card h3{font-size:19px; margin-bottom:10px;}
+  .proj-card p{font-size:14px; color:var(--ink-soft); flex:1;}
+  .proj-foot{font-family:var(--mono); font-size:11.5px; color:var(--steel); margin-top:16px; padding-top:14px; border-top:1px solid var(--rule);}
+
+  /* ---------- DELIVERABLES ---------- */
+  .deliv-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:16px;}
+  @media(max-width:900px){.deliv-grid{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:520px){.deliv-grid{grid-template-columns:1fr;}}
+  .deliv-card{background:var(--card); border:1px solid var(--rule); border-radius:4px; padding:20px; position:relative;}
+  .deliv-tab{font-family:var(--mono); font-size:10.5px; letter-spacing:.08em; color:var(--amber); text-transform:uppercase; margin-bottom:10px;}
+  .deliv-card h3{font-size:16px; margin-bottom:8px; font-family:var(--sans); font-weight:700;}
+  .deliv-card p{font-size:13px; color:var(--ink-soft); margin:0;}
+
+  /* ---------- CERTS ---------- */
+  .cert-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px;}
+  @media(max-width:860px){.cert-grid{grid-template-columns:1fr 1fr;}}
+  @media(max-width:520px){.cert-grid{grid-template-columns:1fr;}}
+  .cert-card{border:1px solid var(--rule-light); border-radius:4px; padding:20px; background:rgba(255,255,255,.03);}
+  .cert-card .stamp{font-family:var(--mono); font-size:11px; color:var(--amber); letter-spacing:.08em; text-transform:uppercase; margin-bottom:8px;}
+  .cert-card h3{font-size:15.5px; font-weight:600; font-family:var(--sans); line-height:1.35;}
+
+  /* ---------- ACHIEVEMENTS ---------- */
+  .ach-grid{display:grid; grid-template-columns:repeat(2,1fr); gap:2px; background:var(--rule); border:1px solid var(--rule);}
+  @media(max-width:720px){.ach-grid{grid-template-columns:1fr;}}
+  .ach-card{background:var(--card); padding:26px;}
+  .ach-num{font-family:var(--serif); font-size:15px; color:var(--steel); margin-bottom:8px;}
+  .ach-card p{margin:0; font-size:15px; color:var(--ink);}
+
+  /* ---------- EDUCATION ---------- */
+  .edu-row{display:flex; justify-content:space-between; flex-wrap:wrap; gap:8px; padding:20px 0; border-bottom:1px solid var(--rule);}
+  .edu-row:last-child{border-bottom:none;}
+  .edu-deg{font-family:var(--serif); font-size:19px;}
+  .edu-meta{font-size:14px; color:var(--ink-soft);}
+  .edu-dates{font-family:var(--mono); font-size:12.5px; color:var(--steel);}
+
+  /* ---------- RESUME / CONTACT ---------- */
+  .resume-box{background:var(--card); border:1px solid var(--rule); border-radius:4px; padding:40px; text-align:center;}
+  .resume-box p{color:var(--ink-soft); max-width:48ch; margin:12px auto 26px;}
+  .contact-grid{display:grid; grid-template-columns:1fr 1fr; gap:40px;}
+  @media(max-width:760px){.contact-grid{grid-template-columns:1fr;}}
+  .contact-list{list-style:none; margin:0; padding:0;}
+  .contact-list li{padding:16px 0; border-bottom:1px solid var(--rule-light); display:flex; justify-content:space-between; font-size:15px;}
+  .contact-list a{text-decoration:none; color:var(--paper); font-weight:600;}
+  .contact-k{font-family:var(--mono); font-size:11.5px; letter-spacing:.08em; text-transform:uppercase; color:#8FB5DB;}
+
+  footer{padding:30px 0; text-align:center; font-family:var(--mono); font-size:12px; color:var(--ink-soft); border-top:1px solid var(--rule);}
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap">
+    <div class="brand">MANUSHRI <span>THANGAPANDI</span></div>
+    <button id="navToggle" onclick="document.getElementById('navlinks').classList.toggle('open')">MENU</button>
+    <ul id="navlinks">
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#deliverables">Deliverables</a></li>
+      <li><a href="#certifications">Certifications</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===================== HOME / HERO ===================== -->
+<section id="home">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow">Business Analyst · PMO Specialist</div>
+      <h1 class="hero-title">Turning complex insurance &amp; tech programs into predictable delivery.</h1>
+      <div class="hero-role">Business Analyst — Senior Project Coordinator — Project Manager — PMO Analyst</div>
+      <p class="hero-lede">I bridge business requirements, Agile execution, and PMO governance across Guidewire InsuranceSuite, healthcare, and infrastructure programs — so leadership always knows exactly where delivery stands.</p>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#resume">Download Résumé</a>
+        <a class="btn btn-ghost" href="#contact">Contact Me</a>
+      </div>
+    </div>
+    <div class="ledger">
+      <div class="ledger-head"><span>Delivery Ledger</span><span>Snapshot</span></div>
+      <div class="ledger-row"><span class="ledger-num">2+ yrs</span><span class="ledger-label">Cross-functional Agile &amp; PMO delivery <span class="tag tag-steel">Active</span></span></div>
+      <div class="ledger-row"><span class="ledger-num">3</span><span class="ledger-label">Guidewire modules governed — Policy, Billing, Claim <span class="tag tag-live">Live</span></span></div>
+      <div class="ledger-row"><span class="ledger-num">8</span><span class="ledger-label">Enterprise workstreams coordinated in one program <span class="tag tag-live">Delivered</span></span></div>
+      <div class="ledger-row"><span class="ledger-num">15</span><span class="ledger-label">Member cross-functional team led — GLOBUS <span class="tag tag-amber">Closed</span></span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== PROFESSIONAL SUMMARY ===================== -->
+<section id="summary">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">01 — Professional Summary</div>
+      <h2>A Business Analyst who also runs the room.</h2>
+    </div>
+    <div class="prose">
+      <p>Business Analyst and Junior Project Coordinator with 2+ years driving Agile/Scrum delivery, PMO governance, and cross-functional stakeholder alignment across Guidewire InsuranceSuite (PolicyCenter, BillingCenter, ClaimCenter), healthcare/medical-equipment, and infrastructure/DevOps programs.</p>
+      <p>Combines end-to-end business analysis — requirement elicitation, gap analysis, and process improvement — with sprint planning, risk management, UAT coordination, and release governance. Builds Power BI and Excel dashboards that give leadership real-time visibility into sprint health, resource load, and delivery risk, and uses AI-assisted tooling to accelerate documentation and testing.</p>
+      <p>Scrum Master–certified, PMP-prepared (35 contact hours/PDUs), and completing an MBA in Operations Management — building toward Associate Project Manager, Senior Project Coordinator, PMO Analyst, and Business Analyst roles.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ABOUT ===================== -->
+<section id="about" class="band-dark">
+  <div class="wrap about-grid">
+    <div>
+      <div class="eyebrow">02 — About Me</div>
+      <h2>From requirements gathering to release day, I own the thread.</h2>
+      <p class="sec-sub">A snapshot of how I work.</p>
+      <ul class="fact-list">
+        <li><span class="fact-k">Based in</span><span>Tuticorin, Tamil Nadu, India</span></li>
+        <li><span class="fact-k">Currently</span><span>Project Co-Ordinator (Jr.), Mahathi Infotech</span></li>
+        <li><span class="fact-k">Studying</span><span>MBA, Operations Management (2025–2027)</span></li>
+        <li><span class="fact-k">Certified</span><span>Agile Scrum Master · PMP-prepared</span></li>
+        <li><span class="fact-k">Open to</span><span>Business Analyst · PMO Analyst · APM roles</span></li>
+      </ul>
+    </div>
+    <div class="prose" style="color:#DDE2E8;">
+      <p>I got here through two lenses at once: the business side, asking what a workflow is actually supposed to do, and the delivery side, making sure the team building it hits every sprint commitment. Most of my career so far has lived at that intersection — inside Guidewire InsuranceSuite programs where a single misunderstood requirement in PolicyCenter or ClaimCenter can ripple into weeks of rework.</p>
+      <p>Day to day, that means running discovery with international stakeholders, translating what I hear into BRDs, FRDs, and traceable requirements, then staying in the room through sprint planning, UAT, and release to make sure what shipped is what was actually asked for. I build the dashboards leadership actually opens — Power BI and Excel views of sprint velocity, Jira health, and resource load — because governance only works if people can see it.</p>
+      <p>I'm PMP-prepared, Scrum Master–certified, and finishing an MBA in Operations Management, because the next step for me is owning bigger programs — not just coordinating them.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CORE COMPETENCIES ===================== -->
+<section id="competencies">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">03 — Core Competencies</div>
+      <h2>Where business analysis meets program delivery.</h2>
+    </div>
+    <div class="grid-3">
+      <div class="chip">Project Coordination &amp; PMO Governance</div>
+      <div class="chip">Agile Scrum &amp; Sprint Planning</div>
+      <div class="chip">Stakeholder Management</div>
+      <div class="chip">Resource &amp; Workload Planning</div>
+      <div class="chip">Risk &amp; Issue Management</div>
+      <div class="chip">BRD / FRD / SOW Documentation</div>
+      <div class="chip">Guidewire PolicyCenter, BillingCenter, ClaimCenter</div>
+      <div class="chip">UAT &amp; Defect Management</div>
+      <div class="chip">KPI Reporting &amp; Dashboards</div>
+      <div class="chip">Power BI &amp; Excel Analytics</div>
+      <div class="chip">Jira &amp; Confluence</div>
+      <div class="chip">CI/CD Monitoring &amp; Release Readiness</div>
+      <div class="chip">Cross-Functional Team Coordination</div>
+      <div class="chip">Business Requirement Gathering</div>
+      <div class="chip">Process Improvement</div>
+      <div class="chip">Operations Management</div>
+      <div class="chip">Strategic Planning</div>
+      <div class="chip">Business &amp; Gap Analysis</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TECHNICAL SKILLS ===================== -->
+<section id="skills" class="band-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">04 — Technical Skills</div>
+      <h2>Tools I run delivery on.</h2>
+    </div>
+    <div class="skill-cat">
+      <h3>Project &amp; PMO Tools</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Jira</span><span class="skill-tag">Confluence</span><span class="skill-tag">MS Project (basic)</span><span class="skill-tag">Power BI</span><span class="skill-tag">Excel — Dashboards &amp; Pivot Tables</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h3>Guidewire Insurance Suite</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">PolicyCenter</span><span class="skill-tag">BillingCenter</span><span class="skill-tag">ClaimCenter</span><span class="skill-tag">Gosu Scripting (functional knowledge)</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h3>DevOps &amp; Version Control</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">Jenkins (CI/CD monitoring)</span><span class="skill-tag">Git</span><span class="skill-tag">GitHub</span><span class="skill-tag">Quadient Inspire</span><span class="skill-tag">Genesys</span><span class="skill-tag">PMT</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h3>Databases &amp; Programming</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">SQL</span><span class="skill-tag">MongoDB</span><span class="skill-tag">Java</span><span class="skill-tag">Dart</span><span class="skill-tag">C</span>
+      </div>
+    </div>
+    <div class="skill-cat">
+      <h3>AI &amp; Collaboration</h3>
+      <div class="skill-tags">
+        <span class="skill-tag">AI-assisted documentation &amp; test acceleration</span><span class="skill-tag">Microsoft Teams</span><span class="skill-tag">SharePoint</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== DOMAIN EXPERTISE ===================== -->
+<section id="domain">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">05 — Domain Expertise</div>
+      <h2>Three industries, one governance model.</h2>
+    </div>
+    <div class="domain-grid">
+      <div class="domain-card">
+        <h3>P&amp;C Insurance — Guidewire</h3>
+        <p>Policy administration, quote-to-bind, premium billing, payment processing, delinquency management, FNOL, claims investigation, reserve handling, settlements, subrogation, renewals, and endorsements across PolicyCenter, BillingCenter, and ClaimCenter.</p>
+      </div>
+      <div class="domain-card">
+        <h3>Healthcare &amp; Medical Equipment</h3>
+        <p>Inventory, purchase orders, work orders, RMA, and Device History Records (DHR) for a medical-equipment manufacturing and distribution platform, including Smart Device warehouse operations.</p>
+      </div>
+      <div class="domain-card">
+        <h3>Infrastructure &amp; DevOps</h3>
+        <p>CI/CD pipeline monitoring, environment health checks, storage &amp; capacity management, deployment scheduling, and infrastructure maintenance across Dev, Test, Staging, and Production.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== WORK EXPERIENCE ===================== -->
+<section id="experience" class="band-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">06 — Work Experience</div>
+      <h2>The delivery record.</h2>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Project Co-Ordinator (Jr.)</div>
+          <div class="exp-meta">Mahathi Infotech · Coimbatore, India · On-site</div>
+        </div>
+        <div class="exp-dates">APR 2024 — PRESENT</div>
+      </div>
+      <ul>
+        <li>Govern end-to-end Agile/Scrum delivery across Guidewire InsuranceSuite, healthcare/medical-equipment, and infrastructure/DevOps programs, keeping sprint commitments and milestones on schedule.</li>
+        <li>Build Power BI and Excel dashboards tracking sprint velocity, resource utilization, Jira ticket status, and KPI metrics, giving leadership real-time PMO governance visibility.</li>
+        <li>Own resource and workload planning and proactive risk management — surfacing Jira blockers, deployment bottlenecks, and workload imbalances before they disrupt a sprint.</li>
+        <li>Monitor Jenkins CI/CD pipelines with DevOps teams to troubleshoot deployment failures and maintain environment stability across Dev, Test, Staging, and Production.</li>
+        <li>Coordinate UAT cycles, defect triage, and test case reviews through production closure, lifting release quality and cutting post-release defects.</li>
+        <li>Partner with international stakeholders to elicit, analyze, and document business requirements (BRD/FRD/SOW, Impact Analysis) in Confluence, keeping full requirement-to-delivery traceability.</li>
+        <li>Facilitate daily Scrum ceremonies, sprint planning, sprint reviews, and stakeholder status meetings; author MoMs and track action items to closure.</li>
+      </ul>
+    </div>
+
+    <div class="exp-item">
+      <div class="exp-top">
+        <div>
+          <div class="exp-role">Business Development Executive</div>
+          <div class="exp-meta">DevTown · Bengaluru, India · On-site</div>
+        </div>
+        <div class="exp-dates">MAR 2024 — APR 2024</div>
+      </div>
+      <ul>
+        <li>Generated and converted qualified sales leads through market research and outbound outreach, consistently meeting monthly targets via CRM-driven pipeline management.</li>
+        <li>Ran the full sales cycle — prospecting, presentations, negotiations, closures — building durable client relationships that fed revenue growth.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== KEY PROJECTS ===================== -->
+<section id="projects">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">07 — Key Projects</div>
+      <h2>Programs I've helped land.</h2>
+    </div>
+    <div class="proj-grid">
+      <div class="proj-card">
+        <div class="proj-tag-row"><span class="tag tag-steel">Insurance</span><span class="tag tag-live">Delivered</span></div>
+        <h3>Digital Transformation Program — Guidewire InsuranceSuite</h3>
+        <p>Coordinated 8 sub-projects (IVANS, Smooth Operators, QB, VC, IMPACTEERS, Danger Ranges, Super Packs, Autobots) spanning PolicyCenter, BillingCenter, and ClaimCenter. Introduced Power BI dashboards for real-time sprint and Jira visibility and reduced deployment-related incidents through proactive Jenkins pipeline monitoring and root-cause coordination.</p>
+        <div class="proj-foot">8 workstreams · 3 Guidewire modules</div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-tag-row"><span class="tag tag-amber">Healthcare</span><span class="tag tag-live">Delivered</span></div>
+        <h3>GLOBUS — Medical Equipment Platform</h3>
+        <p>Held dual Business Analyst / Junior Project Coordinator responsibilities across Inventory, Purchase Orders, Work Orders, RMA, and Device History Records. Led requirement elicitation, authored BRD/FRD/SOW and Impact Analysis documents, and drove UAT to defect-free, on-time production releases.</p>
+        <div class="proj-foot">15-member cross-functional team · 5 modules</div>
+      </div>
+      <div class="proj-card">
+        <div class="proj-tag-row"><span class="tag tag-steel">Infrastructure</span><span class="tag tag-live">Ongoing</span></div>
+        <h3>Infrastructure Operations / DevOps Support</h3>
+        <p>Coordinate CI/CD pipeline monitoring, environment health checks, storage &amp; capacity management, deployment scheduling, and infrastructure maintenance across four environments — enhancing system availability and release readiness.</p>
+        <div class="proj-foot">Dev · Test · Staging · Production</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== BA DELIVERABLES ===================== -->
+<section id="deliverables" class="band-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">08 — Business Analysis Deliverables</div>
+      <h2>The paper trail behind every release.</h2>
+      <p class="sec-sub">Core BA artifacts I produce and maintain across Agile and Guidewire delivery cycles.</p>
+    </div>
+    <div class="deliv-grid">
+      <div class="deliv-card"><div class="deliv-tab">Doc · BRD</div><h3>Business Requirement Documents</h3><p>Captured directly from international stakeholder discovery sessions and translated into scoped, sign-off-ready requirements.</p></div>
+      <div class="deliv-card"><div class="deliv-tab">Doc · FRD</div><h3>Functional Requirement Documents</h3><p>Detailed functional specs for PolicyCenter, BillingCenter, and ClaimCenter builds, keeping business intent and technical build aligned.</p></div>
+      <div class="deliv-card"><div class="deliv-tab">Doc · SOW</div><h3>Statements of Work</h3><p>Scope, deliverables, and acceptance criteria documented per workstream across 8+ enterprise projects.</p></div>
+      <div class="deliv-card"><div class="deliv-tab">Doc · Impact</div><h3>Impact Analysis</h3><p>Change-impact assessments across modules and environments before requirements move into a sprint.</p></div>
+      <div class="deliv-card"><div class="deliv-tab">Agile · Backlog</div><h3>User Stories &amp; Use Cases</h3><p>Backlog items and use-case flows shaped during sprint planning and refinement, sized and prioritized with delivery teams.</p></div>
+      <div class="deliv-card"><div class="deliv-tab">Trace · RTM</div><h3>Requirements Traceability Matrix</h3><p>Requirement-to-delivery traceability maintained end-to-end, so nothing agreed with a stakeholder gets lost between BRD and release.</p></div>
+      <div class="deliv-card"><div class="deliv-tab">QA · UAT</div><h3>UAT Coordination</h3><p>Test case review, UAT cycle management, and defect triage through to production closure — cutting post-release defects.</p></div>
+      <div class="deliv-card"><div class="deliv-tab">Flow · Process</div><h3>Process &amp; Data Flows</h3><p>Current- and future-state process mapping used to drive gap analysis and business process improvement.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CERTIFICATIONS ===================== -->
+<section id="certifications" class="band-dark" style="padding-top:0;">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">09 — Certifications</div>
+      <h2>Credentials on file.</h2>
+    </div>
+    <div class="cert-grid">
+      <div class="cert-card"><div class="stamp">PMI Prep</div><h3>Project Management Professional Preparation Seminar — 35 Contact Hours / PDUs</h3></div>
+      <div class="cert-card"><div class="stamp">Agile</div><h3>Agile Scrum Master</h3></div>
+      <div class="cert-card"><div class="stamp">Analytics</div><h3>Business Analytics with Excel</h3></div>
+      <div class="cert-card"><div class="stamp">AI</div><h3>Generative AI for Beginners</h3></div>
+      <div class="cert-card"><div class="stamp">NPTEL</div><h3>Problem Solving through Programming in C — NPTEL (MoE, Govt. of India)</h3></div>
+      <div class="cert-card"><div class="stamp">Data</div><h3>Python for Data Science — Great Learning</h3></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ACHIEVEMENTS ===================== -->
+<section id="achievements">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">10 — Achievements</div>
+      <h2>What changed because I was in the room.</h2>
+    </div>
+    <div class="ach-grid">
+      <div class="ach-card"><div class="ach-num">A</div><p>Reduced sprint disruptions across three concurrent Guidewire programs by surfacing Jira blockers and workload imbalances before they hit a sprint.</p></div>
+      <div class="ach-card"><div class="ach-num">B</div><p>Delivered defect-free, on-time production releases for the GLOBUS medical-equipment platform across a 15-member cross-functional team.</p></div>
+      <div class="ach-card"><div class="ach-num">C</div><p>Maintained full requirement-to-delivery traceability across cross-border stakeholder programs, closing the gap between BRD and release.</p></div>
+      <div class="ach-card"><div class="ach-num">D</div><p>Cut post-release defects by owning UAT cycles, defect triage, and test case review through to production closure.</p></div>
+      <div class="ach-card"><div class="ach-num">E</div><p>Gave leadership real-time delivery visibility by building the Power BI and Excel dashboards used for PMO governance reporting.</p></div>
+      <div class="ach-card"><div class="ach-num">F</div><p>Reduced deployment-related incidents through proactive Jenkins CI/CD pipeline monitoring and root-cause coordination with DevOps.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== EDUCATION ===================== -->
+<section id="education" class="band-dark">
+  <div class="wrap">
+    <div class="sec-head">
+      <div class="eyebrow">11 — Education</div>
+      <h2>Formal training behind the practice.</h2>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-deg">MBA, Operations Management</div>
+        <div class="edu-meta">Amrita Vishwa Vidyapeetham, Coimbatore · Pursuing · CGPA 7.0</div>
+      </div>
+      <div class="edu-dates">2025 — 2027</div>
+    </div>
+    <div class="edu-row">
+      <div>
+        <div class="edu-deg">B.Tech, Information Technology</div>
+        <div class="edu-meta">Coimbatore Institute of Engineering and Technology · CGPA 8.64</div>
+      </div>
+      <div class="edu-dates">2020 — 2024</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== RESUME DOWNLOAD ===================== -->
+<section id="resume">
+  <div class="wrap">
+    <div class="resume-box">
+      <div class="eyebrow" style="justify-content:center;">12 — Résumé</div>
+      <h2>Get the full record in one file.</h2>
+      <p>ATS-formatted, one-click download — includes full work history, certifications, and technical skills.</p>
+      <a class="btn btn-primary" href="Manushri_Thangapandi_Resume.pdf" download>Download Résumé (PDF)</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== CONTACT ===================== -->
+<section id="contact" class="band-dark">
+  <div class="wrap contact-grid">
+    <div>
+      <div class="eyebrow">13 — Contact</div>
+      <h2>Let's talk about your next release.</h2>
+      <p class="sec-sub">Open to Business Analyst, Senior Business Analyst, Guidewire Business Analyst, PMO Analyst, and Associate Project Manager roles — on-site, hybrid, or remote.</p>
+    </div>
+    <ul class="contact-list">
+      <li><span class="contact-k">Email</span><a href="mailto:manushrithangapandi@gmail.com">manushrithangapandi@gmail.com</a></li>
+      <li><span class="contact-k">Phone</span><a href="tel:+918056798211">+91 80567 98211</a></li>
+      <li><span class="contact-k">LinkedIn</span><a href="https://linkedin.com/in/manushri-thangapandi-pmo" target="_blank" rel="noopener">linkedin.com/in/manushri-thangapandi-pmo</a></li>
+      <li><span class="contact-k">Location</span><span>Tuticorin, Tamil Nadu, India</span></li>
+    </ul>
+  </div>
+</section>
+
+<footer>© 2026 MANUSHRI THANGAPANDI — BUSINESS ANALYST &amp; PMO SPECIALIST</footer>
+
+<script>
+  document.querySelectorAll('#navlinks a').forEach(a=>{
+    a.addEventListener('click', ()=>document.getElementById('navlinks').classList.remove('open'));
+  });
+</script>
+</body>
+</html>
